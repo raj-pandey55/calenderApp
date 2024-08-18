@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -14,6 +15,14 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
+  safelist: [
+    'bg-indigo-500',
+    'bg-green-500',
+    'bg-red-500',
+    'bg-purple-500',
+    'bg-blue-500',
+    'bg-orange-500',
+  ],
 }
 

@@ -9,14 +9,14 @@ import GlobalContext from './context/GlobalContext'
 
 function App() {
   const [currentMonth, setCurrentMonth] = useState(getMonth())
-  const {monthIdx} = useContext(GlobalContext)
+  const {monthIdx, showEventModal} = useContext(GlobalContext)
   useEffect(()=>{
     setCurrentMonth(getMonth(monthIdx))
   }, [monthIdx])
 
   return (
     <React.Fragment>
-      <EventModal />
+      {showEventModal && <EventModal/>}
       <div className='h-screen flex flex-col'>
         <CalenderHeader />
         <div className='flex flex-1'>
