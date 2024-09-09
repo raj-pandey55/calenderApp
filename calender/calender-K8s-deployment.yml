@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-calender-app
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: calenderapp
+  template:
+    metadata:
+      labels:
+        app: calenderapp
+    spec:
+      containers:
+      - name: calenderapp
+        image: codenaimish/calender-app:latest
+        ports:
+        - containerPort: 3000   # This is important to expose the port in the container
